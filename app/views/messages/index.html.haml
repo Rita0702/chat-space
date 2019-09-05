@@ -1,1 +1,8 @@
-hello haml!
+.chatspace
+  .chat__side
+    = render partial: "chat__side__header"
+    = render partial: "chat__side__group"
+  .chat__main
+    = render partial: "chat__main__header"
+    = render partial: "chat__main__message"
+    = render partial: "chat__main__form"
