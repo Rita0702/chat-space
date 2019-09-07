@@ -1,0 +1,22 @@
+.side-content__side-header
+  .side-content__side-header--user-name
+    =current_user.name
+  .side-content__side-header--box
+    =link_to do
+      %i.fa.fa-edit.icon
+    =link_to edit_user_path(current_user) do
+      %i.fa.fa-cog.icon
+.side-content__side-list
+  .side-content__side-list--group-name
+    test-group
+  .side-content__side-list--group-message
+    さようなら
+  -# 以下見た目を合わせるための繰り返し
+  .side-content__side-list--group-name
+    sample-group
+  .side-content__side-list--group-message
+    hello!
+  .side-content__side-list--group-name
+    example
+  .side-content__side-list--group-message
+    まだメッセージがありません

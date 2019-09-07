@@ -3,6 +3,8 @@
 @import "variable";
 @import "side";
 @import "main";
+@import "./users.scss";
+@import "./flash.scss";
 
 .navigertion{
     color: $t-white;
