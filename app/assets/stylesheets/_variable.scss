@@ -1,0 +1,19 @@
+$light-blue: #38aef0;
+$navy: #253141;
+$light-navy: #2f3e51;
+$white: #fafafa;
+$dark-white: #eeeeee;
+
+$t-white: #ffffff;
+$t-black: #333333;
+$t-gray: #999999;
+$t-light-black: #434a54;
+
+@mixin side-padding20{
+  padding-right:20px;
+  padding-left:20px;
+}
+@mixin side-padding40{
+  padding-right:40px;
+  padding-left:40px;
+}

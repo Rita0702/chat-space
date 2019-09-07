@@ -1,0 +1,45 @@
+@import "variable";
+
+.side-content{
+  width: 300px;
+  color: $t-white;
+
+  &__side-header{
+    height: 100px;
+    background-color: $navy;
+    display: flex;
+    @include side-padding20;
+    line-height: 100px;
+
+      &--user-name{
+        font-size: 16px;
+        font-weight: bold;
+      }
+      &--box{
+        display: flex;
+        margin-left: auto;
+      }
+        .icon{
+            color: $white;
+            margin-left: 0.3rem;
+          }
+  }
+
+  &__side-list{
+    background-color: $light-navy;
+    height: calc(100vh - 100px);
+    @include side-padding20;
+    font-weight: bold;
+
+    &--group-name{
+      font-size: 15px;
+      padding-top:20px;
+      padding-bottom:5px;
+    }
+    &--group-message{
+      font-size: 11px;
+      padding-bottom: 20px;
+    }
+  }
+
+}
