@@ -2,7 +2,7 @@
   .side-content__side-header--user-name
     =current_user.name
   .side-content__side-header--box
-    =link_to do
+    =link_to new_group_path do
       %i.fa.fa-edit.icon
     =link_to edit_user_path(current_user) do
       %i.fa.fa-cog.icon

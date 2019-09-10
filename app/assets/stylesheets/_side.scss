@@ -1,5 +1,9 @@
 @import "variable";
 
+.side-bar{
+  width: 300px;
+}
+
 .side-content{
   width: 300px;
   color: $t-white;
@@ -14,6 +18,7 @@
       &--user-name{
         font-size: 16px;
         font-weight: bold;
+        color: $t-white;
       }
       &--box{
         display: flex;
@@ -35,10 +40,12 @@
       font-size: 15px;
       padding-top:20px;
       padding-bottom:5px;
+      color: $t-white;
     }
     &--group-message{
       font-size: 11px;
       padding-bottom: 20px;
+      color: $t-white;
     }
   }
 
