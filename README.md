@@ -28,10 +28,10 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
-|image|text| |
-|users_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|text|string|null: false|
+|image|string| |
+|users_id|integer|foreign_key: true|
+|group_id|integer|foreign_key: true|
 
 #### Association
 - belongs_to :user
