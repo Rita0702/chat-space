@@ -1,22 +1,16 @@
-.side-content__side-header
-  .side-content__side-header--user-name
-    =current_user.name
-  .side-content__side-header--box
-    =link_to do
-      %i.fa.fa-edit.icon
-    =link_to edit_user_path(current_user) do
-      %i.fa.fa-cog.icon
-.side-content__side-list
-  .side-content__side-list--group-name
-    test-group
-  .side-content__side-list--group-message
-    さようなら
-  -# 以下見た目を合わせるための繰り返し
-  .side-content__side-list--group-name
-    sample-group
-  .side-content__side-list--group-message
-    hello!
-  .side-content__side-list--group-name
-    example
-  .side-content__side-list--group-message
-    まだメッセージがありません
+.side-bar
+  .side-content__side-header
+    .side-content__side-header--user-name
+      =current_user.name
+    .side-content__side-header--box
+      =link_to new_group_path do
+        = fa_icon 'edit', class: 'icon'
+      =link_to edit_user_path(current_user) do
+        = fa_icon 'cog', class: 'icon'
+  .side-content__side-list
+    -current_user.groups.each do |group|
+      = link_to group_messages_path(group) do
+        .side-content__side-list--group-name
+          = group.name
+        .side-content__side-list--group-message
+          メッセージはまだありません
