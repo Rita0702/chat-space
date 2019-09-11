@@ -35,6 +35,7 @@
     height: calc(100vh - 100px);
     @include side-padding20;
     font-weight: bold;
+    overflow: scroll;
 
     &--group-name{
       font-size: 15px;

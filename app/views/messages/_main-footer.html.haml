@@ -1,9 +1,10 @@
 .main-content__main-footer
   .form
-    = form_for [@group, @message] do |f|
-      = f.text_field :text, class: 'message', placeholder: 'type a message'
-      .form__mask
-        = f.label :image, class: 'message-image' do
-          = fa_icon 'picture-o', class: 'icon'
-          = f.file_field :image, class: 'hidden'
-      = f.submit 'Send', class: 'form__submit'
+    .messages
+      = form_for [@group, @message] do |f|
+        = f.text_field :text, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'font__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'

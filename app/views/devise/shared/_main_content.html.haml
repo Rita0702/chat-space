@@ -1,0 +1,19 @@
+.main-content
+  .header
+    .header__left
+      .group-name
+        = @group.name
+      .user-name
+        Member : test-user
+    .header__edit-button
+      %input.submit{type: "submit", value: "Edit"}
+  .messages
+    = render @messages
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :text, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
