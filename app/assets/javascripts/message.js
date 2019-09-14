@@ -1,5 +1,9 @@
 $(function(){
   function buildHTML(message){
+    var image = '';
+    if (message.image.url) {
+      image = `<img src="${message.image.url}">`;
+    }
     var html = `<div class="message">
                   <div class="message-top">
                     <div class="message-top__user-name">${message.user_name}</div>
@@ -8,7 +12,7 @@ $(function(){
                   <div class="message-bottom">
                     <div class="message-bottom__comment">
                       <div class="comment">${message.text}</div>
-                      <img src=${ message.image.url }>   
+                      <din class="lower-message__image">${ image }</div>
                     </div>
                   </div>
                 </div>`
@@ -20,7 +24,6 @@ $(function(){
 
   $('#new_message').on('submit',function(e){
     e.preventDefault();
-    // console.log(this)
     var message = new FormData(this);
     var url = $(this).attr('action')
     $.ajax({
@@ -39,7 +42,7 @@ $(function(){
       scroll();
     })
     .fail(function(){
-      alert('error');
+      alert('メッセージを送信することに失敗しました');
       $('.form__submit').prop('disabled',false);
     })
   })
