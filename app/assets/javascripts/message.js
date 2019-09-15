@@ -1,9 +1,6 @@
 $(function(){
   function buildHTML(message){
-    var image = '';
-    if (message.image.url) {
-      image = `<img src="${message.image.url}">`;
-    }
+    var image = message.image.url ? `<img src="${ message.image.url }">` : ``;
     var html = `<div class="message">
                   <div class="message-top">
                     <div class="message-top__user-name">${message.user_name}</div>
@@ -37,9 +34,9 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);
-      $('.form__message').val('');
       $('.form__submit').prop('disabled',false);
       scroll();
+      $('#new_message')[0].reset();
     })
     .fail(function(){
       alert('メッセージを送信することに失敗しました');
