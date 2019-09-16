@@ -9,9 +9,9 @@ $(function(){
                 </div> `
     search_list.append(html);
   }
-  function appendMember(name, user_id){
+  function appendMember(name, userId){
     var html = `<div class="chat-group-user clearfix js-chat-member" id="chat-group-user-8">
-                  <input name="group[user_ids][]" type="hidden" value=${ user_id }>
+                  <input name="group[user_ids][]" type="hidden" value=${ userId }>
                   <p class="chat-group-user__name">${ name }</p>
                   <a class="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn">削除</a>
                 </div>`
@@ -53,10 +53,10 @@ $(function(){
   
   $(function(){
     $(document).on('click','.user-search-add',function(){
-      var name = $(this).attr('data-user-name');
-      var user_id = $(this).attr('data-user-id');
+      var name = $(this).data('userName');
+      var userId = $(this).data('userId');
       $(this).parent().remove();
-      appendMember(name, user_id);
+      appendMember(name, userId);
 
     $(document).on('click','.user-search-remove',function(){
       $(this).parent().remove();
