@@ -1,4 +1,13 @@
 class UsersController < ApplicationController
+  def index
+    @users = User.where('name Like(?)', "%#{params[:keyword]}%").limit(10)
+    # binding.pry
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
   def edit
   end
 

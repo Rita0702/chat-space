@@ -4,9 +4,11 @@
       .group-name
         = @group.name
       .user-name
-        Member : test-user
+        Members : 
+        - @members.each do |member|
+          = member.name
     .header__edit-button
-      %input.submit{type: "submit", value: "Edit"}
+      =link_to "edit", edit_group_path(@group) , class: "submit"
   .messages
     = render @messages
   .form
