@@ -10,6 +10,7 @@
     height: 100px;
     display: flex;
     border-bottom: 1px solid  $dark-white;
+    position: relative;
 
       .group-name{
       padding-top: 35px;
@@ -31,11 +32,13 @@
       .submit{
         height: 40px;
         margin-top: 28px;
-        margin-right: 40px;
         @include side-padding20;
         border: 1px solid $light-blue;
         color: $light-blue;
         line-height: 40px;
+        position: absolute;
+        right: 40px;
+        text-decoration: none;
       }      
   }
 
