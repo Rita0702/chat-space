@@ -47,7 +47,7 @@ $(function(){
   var reloadMessages = function(){
     
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
-      last_message_id = $('.message_last').data("message-id");
+      last_message_id = $('.message_last:last').data("message-id");
 
       $.ajax({
         Type: 'GET',
@@ -60,7 +60,7 @@ $(function(){
         messages.forEach(function(message){
           insertHTML += buildHTML(message);
           $('.messages').append(insertHTML);
-          scroll();       
+          scroll();
         })
       })
       .fail(function(){
