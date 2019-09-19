@@ -1,7 +1,7 @@
 $(function(){
   function buildHTML(message){
     var image = message.image.url ? `<img src="${ message.image.url }">` : ``;
-    var html = `<div class="message" data-id="${message.id}">
+    var html = `<div class="message" data-message-id="${message.id}">
                   <div class="message-top">
                     <div class="message-top__user-name">${message.user_name}</div>
                     <div class="message-top__date">${message.date}</div>
@@ -44,10 +44,11 @@ $(function(){
     })
   })
 
+
   var reloadMessages = function(){
     
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
-      last_message_id = $('.message_last:last').data("message-id");
+      last_message_id = $('.message:last').data("message-id");
 
       $.ajax({
         Type: 'GET',
@@ -61,6 +62,7 @@ $(function(){
           insertHTML += buildHTML(message);
           $('.messages').append(insertHTML);
           scroll();
+
         })
       })
       .fail(function(){

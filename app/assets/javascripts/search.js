@@ -51,19 +51,16 @@ $(function(){
     });
   });
   
-  $(function(){
     $(document).on('click','.user-search-add',function(){
       var name = $(this).data('userName');
       var userId = $(this).data('userId');
       $(this).parent().remove();
       appendMember(name, userId);
+    });
 
     $(document).on('click','.user-search-remove',function(){
       $(this).parent().remove();
     });
-    
-    });
-  });
   
 });
 
