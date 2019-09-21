@@ -1,4 +1,4 @@
 json.(@message, :text, :image)
 json.user_name @message.user.name
-json.date @message.created_at.strftime("%Y/%m/%d %H:%M")
+json.date Time.now.strftime("%Y/%m/%d %H:%M")
 json.id @message.id
