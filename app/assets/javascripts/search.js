@@ -19,7 +19,7 @@ $(function(){
   }
   function appendNoUser(user){
     var html = `<div class="chat-group-user clearfix">
-                  <div class ="chat-group-user__name">${ user }</div>
+                  <div class="chat-group-user__name">${ user }</div>
                 </div> `
     search_list.append(html);
   }
@@ -42,6 +42,7 @@ $(function(){
           });
         }
         else {
+          $('#user-search-result').empty();
           appendNoUser('一致するユーザーがいません');
         }
       })
